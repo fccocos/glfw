@@ -1,0 +1,34 @@
+﻿  context.c
+  egl_context.c
+  init.c
+  input.c
+  monitor.c
+  null_init.c
+  null_joystick.c
+  null_monitor.c
+  null_window.c
+  osmesa_context.c
+  platform.c
+  vulkan.c
+  wgl_context.c
+  win32_init.c
+  win32_joystick.c
+  win32_module.c
+  win32_monitor.c
+  win32_thread.c
+  win32_time.c
+  win32_window.c
+  正在生成代码...
+  正在编译...
+  window.c
+  正在生成代码...
+gdi32.lib(GDI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+kernel32.lib(KERNEL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+shell32.lib(SHELL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+ole32.lib(ole32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+oleaut32.lib(OLEAUT32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+imm32.lib(IMM32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+advapi32.lib(ADVAPI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
+  GLFW.vcxproj -> F:\workspace\cppstation\XEngine\XEngine\vendor\GLFW\bin\Debug-windows-x86_64\GLFW\GLFW.lib

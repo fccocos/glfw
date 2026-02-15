@@ -7,8 +7,28 @@ project "GLFW"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	-- 关键新增：GLFW 静态编译必需定义 + 禁用 assert 消除 _wassert
+	defines {
+		"GLFW_BUILD_STATIC",  -- 静态库编译标记（核心）
+		"_CRT_SECURE_NO_WARNINGS"  -- 禁用 MSVC 安全警告，避免符号替换
+	}
+
+	-- 关键新增：Windows 系统库（GLFW 依赖）
+	filter "system:windows"
+		links {
+			"user32",    -- 窗口管理
+			"gdi32",     -- 图形设备
+			"opengl32",  -- OpenGL
+			"kernel32",  -- 内核功能
+			"shell32",   -- Shell 操作
+			"ole32",     -- COM 组件
+			"oleaut32",  -- OLE 自动化
+			"imm32",     -- 输入法
+			"winmm",     -- 多媒体/定时器
+			"advapi32"   -- 高级 API
+		}
+
+	files {
 		"include/GLFW/glfw3.h",
 		"include/GLFW/glfw3native.h",
 		"src/glfw_config.h",
@@ -29,7 +49,6 @@ project "GLFW"
 
 	filter "system:linux"
 		pic "On"
-
 		systemversion "latest"
 		
 		files
@@ -77,6 +96,7 @@ project "GLFW"
 
 	filter "system:windows"
 		systemversion "latest"
+		staticruntime "Off"
 
 		files
 		{
@@ -100,19 +120,27 @@ project "GLFW"
 
 	filter "configurations:Debug"
 		runtime "Debug"
+		-- runtimechecks "On"  -- 注释保留，不影响核心功能
 		symbols "on"
+		defines { 
+			"_DEBUG"
+		}
 
 	filter { "system:windows", "configurations:Debug-AS" }	
 		runtime "Debug"
 		symbols "on"
 		sanitize { "Address" }
-		flags { "NoRuntimeChecks", "NoIncrementalLink" }
+		--flags { "NoRuntimeChecks", "NoIncrementalLink" }
+		runtimechecks "Off"       -- 替代废弃的 NoRuntimeChecks
+        incrementallink "Off"     -- 替代废弃的 NoIncrementalLink
 
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "speed"
+		defines { "NDEBUG" }  -- 补充：Release 模式显式禁用 assert
 
     filter "configurations:Dist"
 		runtime "Release"
 		optimize "speed"
         symbols "off"
+		defines { "NDEBUG" }  -- 补充：Dist 模式禁用 assert
