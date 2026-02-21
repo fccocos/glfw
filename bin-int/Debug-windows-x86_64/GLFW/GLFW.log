@@ -22,13 +22,4 @@
   正在编译...
   window.c
   正在生成代码...
-gdi32.lib(GDI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-kernel32.lib(KERNEL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-shell32.lib(SHELL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-ole32.lib(ole32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-oleaut32.lib(OLEAUT32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-imm32.lib(IMM32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
-advapi32.lib(ADVAPI32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR 已在 user32.lib(USER32.dll) 中定义；已忽略第二个定义
   GLFW.vcxproj -> F:\workspace\cppstation\XEngine\XEngine\vendor\GLFW\bin\Debug-windows-x86_64\GLFW\GLFW.lib
